@@ -15,6 +15,7 @@
        </s:form>
    
    <p><a href="register.jsp">Please register</a> for our prize drawing.</p>
+   <p><a href="<s:url action='portfolio/PortfolioHomePage'/>">Struts 2 Portfolio</a></p>	
    
   </body>
 </html>

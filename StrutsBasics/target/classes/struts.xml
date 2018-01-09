@@ -20,7 +20,8 @@
             <result name="success">/thankyou.jsp</result>
             <result name="input">/register.jsp</result>
         </action>
-        
+     
     </package>
 
+	<include file="config/portfolio.xml"></include>
 </struts>
