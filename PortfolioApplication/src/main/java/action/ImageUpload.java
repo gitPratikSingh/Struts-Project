@@ -3,9 +3,9 @@ package action;
 import java.io.File;
 import java.io.IOException;
 
-import model.PortfolioService;
-
 import com.opensymphony.xwork2.ActionSupport;
+
+import service.PortfolioService;
 
 /*
  * This action uploads an image file using the default fileUpload 

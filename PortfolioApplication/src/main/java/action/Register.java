@@ -1,8 +1,8 @@
 package action;
 
 
-import model.PortfolioService;
 import model.User;
+import service.PortfolioService;
 
 import com.opensymphony.xwork2.ActionSupport;
 
