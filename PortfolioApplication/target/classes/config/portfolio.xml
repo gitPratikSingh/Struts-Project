@@ -27,17 +27,21 @@
 				result="error" />
 		</global-exception-mappings>
 		
-		<action name="PortfolioHomePage">
+		<action name="PortfolioHomePage" class="action.PortfolioHomePage">
 			<result>/VIEWS/PortfolioHomePage.jsp</result>
 		</action>
 
     <!--  Just a stub at this point.  It's easy and helpful to stub out your pages and actions
           even when you don't have the implementations yet.
      -->
-		<action name="ViewPortfolios">
+		<action name="ViewPortfolios" class="action.ViewPortfolios" >
 			<result>/VIEWS/ViewPortfolios.jsp</result>
 		</action>
-
+		
+		<action name="ViewPortfolio" class="action.ViewPortfolio" >
+			<result>/VIEWS/ViewPortfolio.jsp</result>
+        </action>
+        
 		<action name="Registration">
 			<result>/VIEWS/Registration.jsp</result>
 		</action>
@@ -55,6 +59,10 @@
 			<result type="redirect">/portfolio/secure/AdminPortfolio.action</result>
 			<result name="input">/VIEWS/Login.jsp</result>
 		</action>
+		
+		<action name="SelectPortfolio" class="action.SelectPortfolio">
+			<result>/VIEWS/SelectPortfolio.jsp</result>
+	   	</action>
 		
 		<action name="ErrorProne" 
 			class="action.ErrorProne">
@@ -105,7 +113,16 @@
 		<action name="AdminPortfolio">
 			<result>/VIEWS/AdminPortfolio.jsp</result>
 		</action>
-
+		
+		<action name="UpdateAccountForm" class="action.UpdateAccountForm">
+			<result>/VIEWS/UpdateAccountForm.jsp</result>
+        </action>
+        
+        <action name="UpdateAccount" class="action.UpdateAccount">
+			<result>/VIEWS/UpdateAccountSuccess.jsp</result>
+			<result name="input">/VIEWS/UpdateAccountForm.jsp</result>
+        </action>
+        
 		<action name="AddImage">
 			<result>/VIEWS/ImageUploadForm.jsp</result>
 		</action>
