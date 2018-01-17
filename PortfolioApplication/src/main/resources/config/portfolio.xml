@@ -17,7 +17,10 @@
 	<package name="portfolio" namespace="/portfolio"
 		extends="struts-default">
 		
-		
+		<result-types>
+ 		   <result-type name="customJSON" class="utils.JSONResult" />
+  		</result-types>
+  			
 		<global-results>
 			<result name="error">/VIEWS/Error.jsp</result>
 		</global-results>
@@ -27,21 +30,28 @@
 				result="error" />
 		</global-exception-mappings>
 		
-		<action name="PortfolioHomePage" class="action.PortfolioHomePage">
+		<action name="PortfolioHomePage">
 			<result>/VIEWS/PortfolioHomePage.jsp</result>
 		</action>
+		
+		<action name="ViewPortfolio" class ="action.ViewPortfolio">
+			<result>/VIEWS/ViewPortfolio.jsp</result>
+		</action>
+		
+		<action name="ArtistHomePage" class="action.PortfolioHomePage">
+       		<result>/VIEWS/ArtistHomePage.jsp</result>
+		</action>	
 
+		<action name="VisitorHomePage" class="action.PortfolioHomePage">
+       		<result>/VIEWS/VisitorHomePage.jsp</result>
+		</action>
     <!--  Just a stub at this point.  It's easy and helpful to stub out your pages and actions
           even when you don't have the implementations yet.
      -->
-		<action name="ViewPortfolios" class="action.ViewPortfolios" >
+		<action name="ViewPortfolios">
 			<result>/VIEWS/ViewPortfolios.jsp</result>
 		</action>
-		
-		<action name="ViewPortfolio" class="action.ViewPortfolio" >
-			<result>/VIEWS/ViewPortfolio.jsp</result>
-        </action>
-        
+
 		<action name="Registration">
 			<result>/VIEWS/Registration.jsp</result>
 		</action>
@@ -60,14 +70,18 @@
 			<result name="input">/VIEWS/Login.jsp</result>
 		</action>
 		
-		<action name="SelectPortfolio" class="action.SelectPortfolio">
-			<result>/VIEWS/SelectPortfolio.jsp</result>
-	   	</action>
-		
 		<action name="ErrorProne" 
 			class="action.ErrorProne">
 		</action>
 		
+		<action name="AjaxUserBrowser" class="action.PortfolioHomePage">
+           <result>/VIEWS/ajaxUserBrowser.jsp</result>        
+        </action>    
+         
+        <action name="AjaxRetrieveUser" class="action.RetrieveUser">
+           <result type="customJSON">artist</result>        
+        </action> 
+        
 	</package>
 
 
@@ -113,16 +127,7 @@
 		<action name="AdminPortfolio">
 			<result>/VIEWS/AdminPortfolio.jsp</result>
 		</action>
-		
-		<action name="UpdateAccountForm" class="action.UpdateAccountForm">
-			<result>/VIEWS/UpdateAccountForm.jsp</result>
-        </action>
-        
-        <action name="UpdateAccount" class="action.UpdateAccount">
-			<result>/VIEWS/UpdateAccountSuccess.jsp</result>
-			<result name="input">/VIEWS/UpdateAccountForm.jsp</result>
-        </action>
-        
+
 		<action name="AddImage">
 			<result>/VIEWS/ImageUploadForm.jsp</result>
 		</action>
