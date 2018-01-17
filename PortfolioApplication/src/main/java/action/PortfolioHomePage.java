@@ -6,6 +6,8 @@ import service.PortfolioService;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import model.User;
+
 /*
  * This action retrieves the data model for building the Struts 2 Portfolio HomePage.
  * This mostly consists of a list of the current user/accounts. 
@@ -19,6 +21,7 @@ public class PortfolioHomePage extends ActionSupport {
 
 		String selectedUsername = getPortfolioService().getDefaultUser();
 		setDefaultUsername(selectedUsername);
+		setDefaultUser(getPortfolioService().getUser(selectedUsername));
 
 		return SUCCESS;
 	}
@@ -27,6 +30,7 @@ public class PortfolioHomePage extends ActionSupport {
 
 	private Collection users;
 	private String defaultUsername;
+	private User defaultUser;
 
 	public Collection getUsers() {
 		return users;
@@ -42,6 +46,14 @@ public class PortfolioHomePage extends ActionSupport {
 
 	public void setDefaultUsername(String username) {
 		this.defaultUsername = username;
+	}
+
+	public User getDefaultUser() {
+		return defaultUser;
+	}
+
+	public void setDefaultUser(User username) {
+		this.defaultUser = username;
 	}
 
 	/*
